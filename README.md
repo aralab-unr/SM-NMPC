@@ -2,6 +2,9 @@
 We are considering the NMPC with the following formulation:
 <img src="figures/formu1.png" width="1000">
 
+With the reference as the input and the virtual control law proposed by the AHSMC, more details about the sub-controller can be found in the following manuscript:
+[SM_NMPC_RA_L.pdf](https://github.com/user-attachments/files/19696574/SM_NMPC_RA_L.pdf)
+
 # Code Generation
 The code generation is based on ACADO code generation and the qpOASES solver; therefore, the following libraries are required:
 - ACADO Toolkit (https://acado.github.io/)
