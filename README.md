@@ -1,4 +1,6 @@
 # SM-NMPC: Sliding Mode-Based Nonlinear Model Predictive Control for UAVs under Motor Failure on Microcontrollers
+We are considering the NMPC with the following formulation:
+<img src="figures/formu1.png" width="1000">
 
 # Code Generation
 The code generation is based on ACADO code generation and the qpOASES solver; therefore, the following libraries are required:
