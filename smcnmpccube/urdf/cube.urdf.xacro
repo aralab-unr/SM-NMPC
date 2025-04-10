@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="cubedrone">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="3.8" />
+      <inertia
+        ixx="0.25"
+        ixy="0"
+        ixz="0"
+        iyy="0.25"
+        iyz="0"
+        izz="0.325" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="propbackright">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.000025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+          <mesh filename="file://$(find smcnmpccube)/models/meshes/propbackright.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+          <mesh filename="file://$(find smcnmpccube)/models/meshes/propbackright.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pbr"
+    type="continuous">
+    <origin
+      xyz="-0.1845 -0.219 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="propbackright" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="propbackleft">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.000025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propbackleft.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propbackleft.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pbl"
+    type="continuous">
+    <origin
+      xyz="-0.1845 0.219 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="propbackleft" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="propfrontright">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.000025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propfrontright.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propfrontright.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pfr"
+    type="continuous">
+    <origin
+      xyz="0.1845 -0.219 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="propfrontright" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="propfrontleft">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.000025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propfrontleft.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propfrontleft.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pfl"
+    type="continuous">
+    <origin
+      xyz="0.1845 0.219 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="propfrontleft" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="propbackrighttop">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.000025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propbackrighttop.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propbackrighttop.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pbrt"
+    type="continuous">
+    <origin
+      xyz="-0.1845 -0.219 0.18822"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="propbackrighttop" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="propbacklefttop">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.000025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propbacklefttop.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propbacklefttop.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pblt"
+    type="continuous">
+    <origin
+      xyz="-0.1845 0.219 0.18822"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="propbacklefttop" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="propfrontrighttop">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.000025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propfrontrighttop.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propfrontrighttop.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pfrt"
+    type="continuous">
+    <origin
+      xyz="0.1845 -0.219 0.18822"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="propfrontrighttop" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="propfrontlefttop">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.000025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propfrontlefttop.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propfrontlefttop.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pflt"
+    type="continuous">
+    <origin
+      xyz="0.1845 0.219 0.18822"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="propfrontlefttop" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="propmidright">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.000025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propmidright.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propmidright.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pmr"
+    type="continuous">
+    <origin
+      xyz="-0.1845 -0.06 0.095"
+      rpy="1.571 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="propmidright" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="propmidleft">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" /> 
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.000025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propmidleft.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/propmidleft.STL" scale="0.7 0.7 0.7"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pml"
+    type="continuous">
+    <origin
+      xyz="0.1845 -0.06 0.095"
+      rpy="1.571 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="propmidleft" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="wheelbackright">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.05" />
+      <inertia
+        ixx="7.16E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.6E-06"
+        iyz="0"
+        izz="3.6E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelbackright.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelbackright.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wbr"
+    type="continuous">
+    <origin
+      xyz="0.189 -0.31 -0.142"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheelbackright" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wheelbackleft">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.05" />
+      <inertia
+        ixx="7.16E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.6E-06"
+        iyz="0"
+        izz="3.6E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelbackleft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelbackleft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wbl"
+    type="continuous">
+    <origin
+      xyz="-0.189 -0.31 -0.142"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheelbackleft" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wheelfrontright">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.05" />
+      <inertia
+        ixx="7.16E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.6E-06"
+        iyz="0"
+        izz="3.6E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelfrontright.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelfrontright.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wfr"
+    type="continuous">
+    <origin
+      xyz="0.189 0.31 -0.142"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheelfrontright" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="wheelfrontleft">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.05" />
+      <inertia
+        ixx="7.16E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.6E-06"
+        iyz="0"
+        izz="3.6E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelfrontleft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelfrontleft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wfl"
+    type="continuous">
+    <origin
+      xyz="-0.189 0.31 -0.142"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheelfrontleft" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="wheelbackrighttop">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.05" />
+      <inertia
+        ixx="7.16E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.6E-06"
+        iyz="0"
+        izz="3.6E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelbackrighttop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelbackrighttop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wbrt"
+    type="continuous">
+    <origin
+      xyz="0.189 -0.325 0.30"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheelbackrighttop" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wheelbacklefttop">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.05" />
+      <inertia
+        ixx="7.16E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.6E-06"
+        iyz="0"
+        izz="3.6E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelbacklefttop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelbacklefttop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wblt"
+    type="continuous">
+    <origin
+      xyz="-0.189 -0.325 0.30"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheelbacklefttop" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wheelfrontrighttop">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.05" />
+      <inertia
+        ixx="7.16E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.6E-06"
+        iyz="0"
+        izz="3.6E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelfrontrighttop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelfrontrighttop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wfrt"
+    type="continuous">
+    <origin
+      xyz="0.189 0.325 0.30"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheelfrontrighttop" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="wheelfrontlefttop">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.05" />
+      <inertia
+        ixx="7.16E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.6E-06"
+        iyz="0"
+        izz="3.6E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelfrontlefttop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find smcnmpccube)/models/meshes/wheelfrontlefttop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wflt"
+    type="continuous">
+    <origin
+      xyz="-0.189 0.325 0.30"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheelfrontlefttop" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  
+  <gazebo>
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_p3d.so">
+      <ros>
+        <namespace>/droneposition</namespace>
+      </ros>
+      <update_rate>400</update_rate> 
+      <body_name>base_link</body_name> 
+      <frame_name>world</frame_name>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+  <plugin name="cubeplugin" filename="/home/vanchung/dev_ws/install/smcnmpccube/lib/smcnmpccube/libcubeplugin.so">
+      <updateRate>400</updateRate> 
+      <publishTf>true</publishTf>
+      <rotorThrustCoeff>0.00025</rotorThrustCoeff>
+      <rotorTorqueCoeff>0.000075</rotorTorqueCoeff>
+    </plugin>
+  </gazebo>
+
+</robot>
