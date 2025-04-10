@@ -33,7 +33,7 @@ $ make
 $ cd ./acadogencube
 ```
 
-Now, the generated code is located in the acadogen_quad or the cube_gen folder, which includes the necessary include directory required to run NMPCM. For more details on code generation, the author strongly recommends visiting: [ACADO Getting Started Guide](https://docs.ros.org/en/kinetic/api/acado/html/sim_getting_started.html)
+Now, the generated code is located in the acadogen_quad or the cube_gen folder, which includes the necessary include directory required to run the NMPC. For more details on code generation, the author strongly recommends visiting: [ACADO Getting Started Guide](https://docs.ros.org/en/kinetic/api/acado/html/sim_getting_started.html)
 
 # Contact
 - [Van Chung Nguyen](mailto:vanchungn@.unr.edu)
