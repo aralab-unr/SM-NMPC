@@ -74,6 +74,7 @@ $ colcon build
 * Note that the package contains the code generation and includes the qpOASES library. If the user wants to use SM-NMPC for a different problem, they need to regenerate the code and replace it to the include folder.
 * Note that this project uses a custom plugin. Users need to replace the plugin path in the file /urdf/uav_drone.urdf.xacro at line 268. Replace: plugin name="uavplugin" filename="/home/vanchung/dev_ws/install/smcmpcquad/lib/smcmpcquad/libuavplugin.so" with the correct path by changing the username to the name of your computer. For the Cube-Drone, Replace line 1009 in the file /urdf/cube.urdf.xacro: plugin name="cubeplugin" filename="/home/vanchung/dev_ws/install/smcnmpccube/lib/smcnmpccube/libcubeplugin.so" with the correct path by changing the username to the name of your computer. Then rebuild the project again to run the simulation.
 
+## Simulation results
 
 To run the SM-NMPC for Quadrotor UAVs simulation, follow these commands:
 
@@ -94,8 +95,11 @@ $ ros2 launch smcnmpccube model.launch.py
 # Step 2: Run the controller
 $ ros2 run smcnmpccube smcnmpccube
 ```
+## Motor failure results
 
+To run the motor failure scenario, the user needs to modify the plugin in the file /src/uavplugin.cc or /src/cubeplugin.cc. Change the added throttle to 50% as described in the manuscript. For the quadrotor UAVs, comment out line 135 and uncomment line 132. For the Cube, comment out line 176 and uncomment line 178.
 
+Then rebuild the project and run the simulation as in the normal cases described above.
 # Contact
 - [Van Chung Nguyen](mailto:vanchungn@.unr.edu)
 - [Hung La](mailto:hla@unr.edu)
