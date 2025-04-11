@@ -75,24 +75,24 @@ $ colcon build
 * Note that this project uses a custom plugin. Users need to replace the plugin path in the file /urdf/uav_drone.urdf.xacro at line 268. Replace: plugin name="uavplugin" filename="/home/vanchung/dev_ws/install/smcmpcquad/lib/smcmpcquad/libuavplugin.so" with the correct path by changing the username to the name of your computer. For the Cube-Drone, Replace line 1009 in the file /urdf/cube.urdf.xacro: plugin name="cubeplugin" filename="/home/vanchung/dev_ws/install/smcnmpccube/lib/smcnmpccube/libcubeplugin.so" with the correct path by changing the username to the name of your computer. Then rebuild the project again to run the simulation.
 
 
-To run the NMPCM simulation, follow these commands:
+To run the SM-NMPC for Quadrotor UAVs simulation, follow these commands:
+
 ```shell
 # Step 1: Run the Gazebo model:
-$ ros2 launch nmpcpidquad model.launch.py
+$ ros2 launch smcmpcquad model.launch.py
 
-# Step 2: Run the controller
-$ ros2 run nmpcpidquad nmpcpidquad %for the nmpcm
-or run
-$ ros2 run nmpcpidquad cascadedpid %for the cascaded pid
+# Step 2: Run the EKF & controller
+$ ros2 run smcmpcquad EKF node
+$ ros2 run smcmpcquad smcmpcquad
 ```
-To run the NMPC based on CasADi, follow these commands:
+To run the SM-NMPC for Cube-Drone simulation, follow these commands:
 
 ```shell
 # Step 1: Run the Gazebo model:
-$ ros2 launch nmpccasadiquad model.launch.py
+$ ros2 launch smcnmpccube model.launch.py
 
 # Step 2: Run the controller
-$ ros2 run nmpccasadiquad nmpccasadiquad 
+$ ros2 run smcnmpccube smcnmpccube
 ```
 
 
