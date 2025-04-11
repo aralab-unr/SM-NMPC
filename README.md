@@ -100,6 +100,23 @@ $ ros2 run smcnmpccube smcnmpccube
 To run the motor failure scenario, the user needs to modify the plugin in the file /src/uavplugin.cc or /src/cubeplugin.cc. Change the added throttle to 50% as described in the manuscript. For the quadrotor UAVs, comment out line 135 and uncomment line 132. For the Cube, comment out line 176 and uncomment line 178.
 
 Then rebuild the project and run the simulation as in the normal cases described above.
+
+# Experiments
+## Hardware Setups
+We used the following sensors and receivers for the quadrotors:
+- Teensy 4.1 
+- MPU 6050
+- Micoair MTF-02P optical flow and LiDAR sensor
+- FrSky X8R radio receiver
+
+## Embedded library
+To embed the controller onto the Teensy 4.1, the user must download the ArduinoSMNMPC folder. This folder contains the library for NMPC (Nonlinear Model Predictive Control) and the implemented code for the quadrotor. The user must copy the code generation library into the libraries folder of the Arduino IDE and then upload the sketch nmpcpidteensy.ino to the Teensy 4.1. As discussed earlier, if the user wants to run their own NMPC controller for another system, they must generate the code according to the specific problem and then replace all the generated files in the library to update the embedded code. (Note that qpOASES is already included in the library.)
+
+* Note: The embedded code may have some missing includes in the acado_qpoases_interface.cpp file. To fix this, change #include "INCLUDE/EXTRAS/SolutionAnalysis.hpp" to #include "SolutionAnalysis.hpp" and change #include "INCLUDE/QProblemB.hpp" to #include "QProblemB.hpp".
+  
+## Results
+We verified the efficiency of our control method for real-time execution on the resource-constrained Teensy 4.1 microcontroller and implemented our flight controller on both the quadrotor UAVs and the Cube-Drone for normal and motor failure cases.
+
 # Contact
 - [Van Chung Nguyen](mailto:vanchungn@.unr.edu)
 - [Hung La](mailto:hla@unr.edu)
