@@ -121,9 +121,10 @@ The scheme of the proposed method is as follows:
 <p align="center">
   <img src="figures/SM-NMPCscheme.png" alt="Drone Frame" width="750">
 </p>
+
 We also test the stability of the proposed on the motor failure cases:
 <p align="center">
-  <img src="figures/hardwaresetupfailure.png" alt="Drone Frame" width="750">
+  <img src="figures/hardwaresetupfailure.png" alt="Drone Frame" width="500">
 </p>
 
 # Contact
