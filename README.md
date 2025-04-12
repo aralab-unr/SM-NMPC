@@ -127,6 +127,12 @@ We also test the stability of the proposed on the motor failure cases:
   <img src="figures/hardwaresetupfailure.png" alt="Drone Frame" width="500">
 </p>
 
+The video results:
+
+
+https://github.com/user-attachments/assets/df3c5e3f-bae2-4db5-833c-5699be735a65
+
+
 # Contact
 - [Van Chung Nguyen](mailto:vanchungn@.unr.edu)
 - [Hung La](mailto:hla@unr.edu)
