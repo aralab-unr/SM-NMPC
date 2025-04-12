@@ -130,7 +130,8 @@ We also test the stability of the proposed on the motor failure cases:
 The video results:
 
 
-https://github.com/user-attachments/assets/df3c5e3f-bae2-4db5-833c-5699be735a65
+
+https://github.com/user-attachments/assets/339204a1-ff74-4bbc-8bac-adf3491882e6
 
 
 # Contact
