@@ -1,4 +1,4 @@
-# SM-NMPC: Sliding Mode-Based Nonlinear Model Predictive Control for UAVs under Motor Failure on Microcontrollers
+# SM-NMPC: Sliding Mode-Based Nonlinear Model Predictive Control for UAVs under Degraded Motor on Microcontrollers
 # Problem formulation
 We are considering the NMPC with the following formulation:
 <img src="figures/formu1.png" width="1000">
