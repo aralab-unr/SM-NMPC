@@ -1,8 +1,9 @@
 # SM-NMPC: Sliding Mode-Based Nonlinear Model Predictive Control for UAVs under Degraded Motor on Microcontrollers
-# Problem formulation
 
 Our paper has been accepted for publication in *IEEE Robotics and Automation Letters (RA-L)*: [https://ieeexplore.ieee.org/document/11152376](https://ieeexplore.ieee.org/document/11152376).  
 If our repository supports your academic projects, please cite our work. Thank you!
+
+# Problem formulation
 
 We are considering the NMPC with the following formulation:
 <img src="figures/formu1.png" width="1000">
